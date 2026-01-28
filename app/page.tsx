@@ -9,7 +9,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
+      <section id="projects">
         <h2>Projects</h2>
         <ul>
           <li>Smart Expense</li>
@@ -23,7 +23,7 @@ export default function Home() {
         <p>Full Stack Freelance</p>
       </section>
 
-      <section>
+      <section id="blog">
         <h2>Blog</h2>
         <p>Artikel & tulisan</p>
         <p>Coming Soon</p>
