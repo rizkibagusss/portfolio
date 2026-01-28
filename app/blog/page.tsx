@@ -1,3 +1,23 @@
+type BlogPost = {
+  id: number;
+  title: string;
+};
+
+const posts: BlogPost[] = [
+  {
+    id: 1,
+    title: "Belajar Next.js dari Nol",
+  },
+  {
+    id: 2,
+    title: "Kenapa Git Penting untuk Developer",
+  },
+  {
+    id: 3,
+    title: "Kenapa kita harus bersa",
+  },
+];
+
 export default function BlogPage() {
   return (
     <main>
@@ -5,8 +25,9 @@ export default function BlogPage() {
       <p>Tulisan dan catatan apapun tentang aktivitas saya</p>
 
       <ul>
-        <li>Belajar Next.js dari Nol</li>
-        <li>Kenapa Git Penting untuk Developer</li>
+        {posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
       </ul>
     </main>
   );
