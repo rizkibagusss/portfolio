@@ -31,7 +31,7 @@ export default function RootLayout({
         <header>
           <nav>
             <Link href="/">Home</Link> | <a href="#projects">Projects</a> |{" "}
-            <a href="#blog">Blog</a>
+            <Link href="/blog">Blog</Link>
           </nav>
         </header>
         {children}
