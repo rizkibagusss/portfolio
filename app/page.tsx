@@ -1,10 +1,39 @@
 export default function Home() {
   return (
     <main>
-      <h1>Rizki Bagus</h1>
-      <p>Software Engineer</p>
+      <section>
+        <h1>Rizki Bagus Ariyanto</h1>
+        <p>Software Engineer</p>
+        <p>
+          A software engineer passionate about building great web experiences
+        </p>
+      </section>
 
-      <p>I told you bro, i can get remote job for my second job</p>
+      <section>
+        <h2>Projects</h2>
+        <ul>
+          <li>Smart Expense</li>
+          <li>Coming Soon</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <p>IT Support</p>
+        <p>Full Stack Freelance</p>
+      </section>
+
+      <section>
+        <h2>Blog</h2>
+        <p>Artikel & tulisan</p>
+        <p>Coming Soon</p>
+      </section>
+
+      <section>
+        <h2>Connect</h2>
+        <p>Feel free to contact me at rizkibagusariyanto@gmail.com</p>
+        <p>GitHub / LinkedIn</p>
+      </section>
     </main>
   );
 }
