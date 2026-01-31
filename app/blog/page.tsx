@@ -1,39 +1,24 @@
 import Link from "next/link";
+import { supabase } from "../lib/supabase";
 
-type BlogPost = {
-  id: number;
-  title: string;
-  slug: string;
-};
+export default async function BlogPage() {
+  const { data: blogs, error } = await supabase
+    .from("blogs")
+    .select("id, title, slug")
+    .order("created_at", { ascending: false });
 
-const posts: BlogPost[] = [
-  {
-    id: 1,
-    title: "Belajar Next.js dari Nol",
-    slug: "belajar-nextjs",
-  },
-  {
-    id: 2,
-    title: "Kenapa Git Penting untuk Developer",
-    slug: "kenapa-git-penting",
-  },
-  {
-    id: 3,
-    title: "Kenapa kita harus bersabar",
-    slug: "kenapa-harus-bersabar",
-  },
-];
+  if (error) {
+    return <p>Error loading blogs</p>;
+  }
 
-export default function BlogPage() {
   return (
     <main>
       <h1>Blog</h1>
-      <p>Tulisan dan catatan apapun tentang aktivitas saya</p>
 
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+        {blogs?.map((blog) => (
+          <li key={blog.id}>
+            <Link href={`/blog/${blog.slug}`}>{blog.title}</Link>
           </li>
         ))}
       </ul>
